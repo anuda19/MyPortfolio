@@ -84,7 +84,7 @@ function Hero() {
             variant="lead"
             className="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
           >
-            I'm Anurag Sinha, a dedicated web developer based in the Bharat,
+            I am Anurag Sinha, a dedicated web developer based in the Bharat,
             specializing in building innovative digital experiences. With a
             strong focus on Next.js, Prisma, and MySQL, I blend creativity with
             functionality to craft intelligent and dynamic web solutions.
