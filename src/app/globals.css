@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  .group:hover .spin-slow {
+    animation-play-state: paused;
+  }
+
+  .circular-container {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+  }
+  
+  .circular-container .icon {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    transform-origin: center;
+    transition: transform 0.1s ease-out;
+  }
+  
+  /* Positioning icons in a circular pattern */
+  .icon:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }   /* Top */
+  .icon:nth-child(2) { top: 50%; left: 100%; transform: translate(-50%, -50%); } /* Right */
+  .icon:nth-child(3) { top: 100%; left: 50%; transform: translate(-50%, -50%); } /* Bottom */
+  .icon:nth-child(4) { top: 50%; left: 0; transform: translate(-50%, -50%); }   /* Left */
+  /* .icon:nth-child(5) { top: 20%; left: 80%; transform: translate(-50%, -50%); } Top-right */
