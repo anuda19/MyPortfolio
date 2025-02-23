@@ -10,6 +10,7 @@ import {
   DocumentTextIcon,
 } from "@heroicons/react/24/solid";
 import { SkillCard } from "@/components";
+import Heading from "@/components/heading";
 
 const SKILLS = [
   {
@@ -54,20 +55,17 @@ export function Skills() {
   return (
     <section className="px-8 py-10" id="skills">
       <div className="container mx-auto mb-2 text-center">
-        <Typography color="blue-gray" className="mb-2 font-bold uppercase">
+        <h2 color="blue-gray" className="mb-2 font-bold uppercase text-blue-gray-900">
           my skills
-        </Typography>
-        <Typography variant="h1" color="blue-gray" className="mb-4">
-          What I do
-        </Typography>
-        <Typography
-          variant="lead"
-          className="mx-auto w-full !text-gray-500 lg:w-10/12"
+        </h2>
+        <Heading title="What I Do" />
+        <p
+          className="mx-auto w-full !text-gray-500 lg:w-10/12 text-lg"
         >
           I&apos;m not just a developer; I&apos;m a digital dreamweaver.
           Crafting immersive online experiences is not just a job but my
           calling. Discover below how I can help you.
-        </Typography>
+        </p>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         {SKILLS.map((props, idx) => (

@@ -8,6 +8,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { useRef, useState } from "react";
 import common from "@/utils/common";
 import { toast } from "react-toastify";
+import Loader from "@/components/loader";
 
 function Hero() {
   const [requestEmail, setRequestEmail] = useState<string>("");
@@ -69,33 +70,26 @@ function Hero() {
     <header className="bg-white p-8">
       <div className="container mx-auto grid h-full gap-10 min-h-[60vh] w-full grid-cols-1 items-center lg:grid-cols-2">
         <div className="row-start-2 lg:row-auto">
-          <Typography
-            variant="h1"
+          <h1
             data-aos="fade-right"
             data-aos-delay="200"
             color="blue-gray"
-            className="mb-4 lg:text-3xl !leading-tight text-3xl"
+            className="mb-4 lg:text-3xl !leading-tight text-3xl font-bold text-blue-gray-900"
           >
             Welcome to my Web <br /> Development Portofolio!
-          </Typography>
-          <Typography
+          </h1>
+          <h5
             data-aos="fade-right"
             data-aos-delay="400"
-            variant="lead"
-            className="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
+            className="mb-4 !text-gray-500 md:pr-16 xl:pr-28 text-lg"
           >
             I am Anurag Sinha, a dedicated web developer based in the Bharat,
             specializing in building innovative digital experiences. With a
             strong focus on Next.js, Prisma, and MySQL, I blend creativity with
             functionality to craft intelligent and dynamic web solutions.
-          </Typography>
+          </h5>
           <div className="grid" data-aos="fade-right" data-aos-delay="600">
-            <Typography
-              variant="small"
-              className="mb-2 text-gray-900 font-medium"
-            >
-              Your email
-            </Typography>
+            <p className="mb-2 text-blue-gray-900 font-medium">Your email</p>
             <div className="mb-2 flex w-full flex-col gap-4 md:w-10/12 md:flex-row">
               {/* @ts-ignore */}
               <Input
@@ -109,15 +103,14 @@ function Hero() {
                 onChange={(e) => setRequestEmail(e.target.value)}
               />
               {/* {error && <p className="text-red-500 text-xs">{error}</p>} */}
-              <Button
-                color="gray"
+              <button
                 // className="w-full pl-4 md:w-[14rem] flex"
-                className="flex items-center justify-center w-full md:w-[15rem]"
+                className="flex items-center justify-center w-full md:w-[15rem] rounded-md border border-gray/50 bg-gray-900 px-6 py-3 text-center text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300"
                 onClick={sendRequestEmail}
               >
-                {loading && <Spinner className="h-4 w-4 mr-2" />}
-                require offer
-              </Button>
+                {loading && <Loader />}
+                Require Offer
+              </button>
             </div>
           </div>
           {/* <Typography variant="small" className="font-normal !text-gray-500">

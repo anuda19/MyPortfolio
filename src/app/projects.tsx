@@ -1,6 +1,7 @@
 "use client";
 
 import { ProjectCard } from "@/components";
+import Heading from "@/components/heading";
 import { Typography } from "@material-tailwind/react";
 
 const PROJECTS = [
@@ -37,7 +38,7 @@ const PROJECTS = [
   {
     img: "/image/blog-6.png",
     title: "President's Alliance",
-    desc: "Built a performance-optimized immigration services platform using React.js, Next.js, and SSR and improved SEO rankings for scalable growth.",
+    desc: "Built a performance-optimized immigration services platform using React.js, Next.js, and SSR and improved SEO rankings.",
     link: "https://www.presidentsalliance.org/",
   },
 ];
@@ -46,16 +47,13 @@ export function Projects() {
   return (
     <section className="py-8 px-8" id="projects">
       <div className="container mx-auto mb-20 text-center">
-        <Typography variant="h2" color="blue-gray" className="mb-4">
-          My Projects
-        </Typography>
-        <Typography
-          variant="lead"
-          className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-6/12"
+        <Heading title="Projects" />
+        <h5
+          className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-6/12 text-lg"
         >
           From building seamless mobile apps to crafting engaging websites, I
           bring ideas to life with clean, efficient, and user-friendly designs.
-        </Typography>
+        </h5>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 xl:grid-cols-4">
         {PROJECTS.map((props, idx) => (

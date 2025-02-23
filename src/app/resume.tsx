@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography, Button } from "@material-tailwind/react";
 import {
   ChartBarIcon,
   PuzzlePieceIcon,
@@ -8,6 +7,7 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
 import { ResumeItem } from "@/components";
+import Heading from "@/components/heading";
 
 const RESUME_ITEMS = [
   {
@@ -29,16 +29,13 @@ export function Resume() {
     <section className="px-8 py-24" id="resume">
       <div className="container mx-auto grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-2">
         <div className="col-span-1" data-aos="fade-right">
-          <Typography variant="h2" color="blue-gray">
-            My Resume
-          </Typography>
-          <Typography className="mb-4 mt-3 w-9/12 font-normal !text-gray-500">
+          <Heading title="My Resume" />
+          <p className="mb-4 mt-3 w-9/12 font-normal !text-gray-500 text-lg">
             Highly skilled and creative Web Developer with 3+ years of
             experience in crafting visually stunning and functionally robust
             websites and web applications.
-          </Typography>
-          <Button
-            variant="text"
+          </p>
+          <button
             color="gray"
             className="flex items-center gap-2"
             onClick={() => window.open('/file/anurag.pdf', '_blank')}
@@ -48,7 +45,7 @@ export function Resume() {
               strokeWidth={3}
               className="h-3.5 w-3.5 text-gray-900"
             />
-          </Button>
+          </button>
         </div>
         <div className="col-span-1 grid gap-y-6 lg:ml-auto pr-0 lg:pr-12 xl:pr-32">
           {RESUME_ITEMS.map((props, idx) => (

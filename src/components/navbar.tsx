@@ -1,13 +1,6 @@
 import React from "react";
+import { Collapse } from "@material-tailwind/react";
 import {
-  Navbar as MTNavbar,
-  Collapse,
-  Button,
-  IconButton,
-  Typography,
-} from "@material-tailwind/react";
-import {
-  UserCircleIcon,
   Squares2X2Icon,
   XMarkIcon,
   Bars3Icon,
@@ -16,6 +9,7 @@ import {
   ChatBubbleLeftRightIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const NAV_MENU = [
   {
@@ -53,16 +47,13 @@ interface NavItemProps {
 function NavItem({ children, href }: NavItemProps) {
   return (
     <li>
-      <Typography
-        as="a"
+      <Link
         href={href || "#"}
-        // target={href ? "_blank" : "_self"}
-        variant="paragraph"
         color="gray"
         className="flex items-center gap-2 font-medium text-gray-900"
       >
         {children}
-      </Typography>
+      </Link>
     </li>
   );
 }
@@ -80,11 +71,11 @@ export function Navbar() {
   }, []);
 
   return (
-    <MTNavbar shadow={false} fullWidth className="border-0 sticky top-0 z-50">
+    <nav className="border-0 sticky top-0 z-50 bg-white shadow-sm h-16 flex flex-wrap items-center justify-between py-2">
       <div className="container mx-auto flex items-center justify-between">
-        <Typography color="blue-gray" className="text-lg font-bold">
+        <h3 color="blue-gray" className="text-2xl font-bold text-blue-gray-900 px-4">
           Anurag Sinha
-        </Typography>
+        </h3>
         <ul className="ml-10 hidden items-center gap-8 lg:flex">
           {NAV_MENU.map(({ name, icon: Icon, href }) => (
             <NavItem key={name} href={href}>
@@ -94,24 +85,19 @@ export function Navbar() {
           ))}
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="text">Sign In</Button>
+          <button className="flex items-center gap-2">Sign In</button>
         </div>
-        <IconButton
-          variant="text"
-          color="gray"
-          onClick={handleOpen}
-          className="ml-auto inline-block lg:hidden"
-        >
+        <div onClick={handleOpen} className="ml-auto inline-block lg:hidden">
           {open ? (
             <XMarkIcon strokeWidth={2} className="h-6 w-6" />
           ) : (
             <Bars3Icon strokeWidth={2} className="h-6 w-6" />
           )}
-        </IconButton>
+        </div>
       </div>
       <Collapse open={open}>
-        <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
-          <ul className="flex flex-col gap-4">
+        <div className="container mx-auto mt-3 border-t border-gray-200 bg-white shadow-sm p-4">
+          <ul className="flex flex-col gap-4 p-4">
             {NAV_MENU.map(({ name, icon: Icon }) => (
               <NavItem key={name}>
                 <Icon className="h-5 w-5" />
@@ -127,7 +113,7 @@ export function Navbar() {
           </div> */}
         </div>
       </Collapse>
-    </MTNavbar>
+    </nav>
   );
 }
 

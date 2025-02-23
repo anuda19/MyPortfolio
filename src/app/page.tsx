@@ -7,7 +7,6 @@ import Skills from "./skills";
 import Projects from "./projects";
 import Resume from "./resume";
 import Testimonial from "./testimonial";
-import PopularClients from "./popular-clients";
 import ContactForm from "./contact-form";
 import { ToastContainer } from "react-toastify";
 import "aos/dist/aos.css";

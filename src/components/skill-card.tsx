@@ -8,19 +8,19 @@ interface SkillCardProps {
 
 export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
   return (
-    <Card color="transparent" shadow={false}  data-aos="fade-up">
-      <CardBody className="grid justify-center text-center">
+    <div className="card"  data-aos="fade-up">
+      <div className="card-body grid justify-center text-center">
         <div className="mx-auto mb-6 grid h-12 w-12 place-items-center rounded-full bg-gray-900 p-2.5 text-white shadow">
           <Icon className="h-6 w-6" strokeWidth={2} />
         </div>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
+        <h5 className="mb-2 text-2xl font-bold text-blue-gray-900">
           {title}
-        </Typography>
-        <Typography className="px-8 font-normal !text-gray-500">
+        </h5>
+        <p className="px-8 font-normal !text-gray-500 text-lg">
           {children}
-        </Typography>
-      </CardBody>
-    </Card>
+        </p>
+      </div>
+    </div>
   );
 }
 

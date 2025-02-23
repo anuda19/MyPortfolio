@@ -17,8 +17,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ img, title, desc, link }: ProjectCardProps) {
   return (
-    <Card color="transparent" shadow={false}  data-aos="fade-up">
-      <CardHeader floated={false} className="mx-0 mt-0 mb-6 h-48">
+    <div className="card" data-aos="fade-up">
+      <div className="mx-0 mt-0 mb-6 h-48 card-header">
         <Image
           src={img}
           alt={title}
@@ -26,24 +26,28 @@ export function ProjectCard({ img, title, desc, link }: ProjectCardProps) {
           height={768}
           className="h-full w-full object-fit"
         />
-      </CardHeader>
-      <CardBody className="p-0">
-        <a
+      </div>
+      <div className="p-0 card-body">
+        <Link
           href="#"
           className="text-blue-gray-900 transition-colors hover:text-gray-800"
         >
-          <Typography variant="h5" className="mb-2">
+          <h5 className="mb-2 text-2xl font-bold text-blue-gray-900">
             {title}
-          </Typography>
-        </a>
-        <Typography className="mb-6 font-normal !text-gray-500">
+          </h5>
+        </Link>
+        <p className="mb-6 font-normal !text-gray-500 text-lg">
           {desc}
-        </Typography>
-        <Link href={link} target="_blank" className="bg-gray-900 text-white p-2 rounded px-4">
+        </p>
+        <Link
+          href={link}
+          target="_blank"
+          className="bg-gray-900 text-white p-2 rounded px-4"
+        >
           Visit Site
         </Link>
-      </CardBody>
-    </Card>
+      </div>
+    </div>
   );
 }
 
